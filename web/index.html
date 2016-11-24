@@ -1,0 +1,2794 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>首页</title>
+ <!-- Bootstrap -->
+<link rel="stylesheet" href="css/global.css">
+<link href="css/layout.css" rel="stylesheet">
+<link href="css/fontsico.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/style.js"></script>
+<link rel="stylesheet" href="css/dropkick.css" type="text/css">
+<script type="text/javascript" src="js/jquery.dropkick-min.js"></script>
+
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<link href="css/easyui.css" rel="stylesheet">
+<script src="JS/jquery.minicolors.js"></script>
+<link rel="stylesheet" href="CSS/jquery.minicolors.css">
+</head>
+<body>
+<!-------------------------- nav ---------------------->
+<nav class="hd">
+   <div class="hd-w clearboth">
+      <ul class="nav-group nav-group-a pull-left">
+          <li class="nav-item pull-left btn-draw click_drawunitbox"></li>
+      </ul>
+      <ul class="nav-group  nav-group-b pull-left">
+          <li class="nav-item pull-left btn-newlybuild">
+          </li>
+          <li class="nav-item pull-left brn-open click_boclediv">
+          </li>
+          <li class="nav-item pull-left brn-keep click_boclediv">
+          </li>
+          <li class="nav-item pull-left brn-ImportActor click_boclediv">
+          </li>
+          <li class="nav-item pull-left brn-ExportActor click_boclediv">
+          </li>
+      </ul>
+      <ul class="nav-group  nav-group-c pull-left">
+          <li class="nav-item pull-left brn-ImportLight_button" onClick="selectTab03Syn(1)" ></li>
+          <li class="nav-item pull-left btn-ImportCamera_button" onClick="selectTab03Syn(2)">></li>
+      </ul>
+      <ul class="nav-group  nav-group-d pull-left ">
+          <li class="nav-item pull-left brn-Bake_AO" onClick="selectTab03Syn(3)"></li>
+          <li class="nav-item pull-left btn-Bake_GI" onClick="selectTab03Syn(4)"></li>
+          <li class="nav-item pull-left btn-Run" ></li>
+       </ul>
+       <ul class="nav-group  nav-group-e pull-left">
+          <li class="nav-item pull-left btn-setPara_Default" onClick="selectTab03Syn(5)"></li>
+          <li class="nav-item pull-left brn-Overall_View" onClick="selectTab03Syn(6)"></li>
+          <li class="nav-item pull-left brn-Show_in_VR" onClick="selectTab03Syn(7)"></li>
+      </ul>
+      <ul class="nav-group  nav-group-f pull-left">
+          <li class="nav-item pull-left btn-help"></li>
+          <li class="nav-item pull-left btn-ListItem click_distablediv"></li>
+      </ul>
+<form action="upload_furniture.php" method="post" enctype="multipart/form-data">
+<input name="furniture" type="file"/>
+<input type="submit" value="add"/>
+</form>  
+   </div>  
+</nav>
+<!-------------------------- nav ---------------------->
+<!-------------------------- edit  ---------------------->
+<section class="hdheigh"></section>
+<section class="makebox"> 
+    <div class="moreien " style="width:200px; height:200px; border:3px solid #ff0;" onClick="moublesprompsm()">我的模型</div>
+</section>
+<!-------------------------- edit end ---------------------->
+<!-------------------------- edit  ---------------------->
+<section class="moubset">
+   <ul class="tabradio">
+      <li class="pull-left moubset_a tabradioitem"></li>
+      <li class="pull-left moubset_b tabradioitem"></li>
+      <li class="pull-left moubset_c tabradioitem"></li>
+   </ul>
+</section>
+<!-------------------------- edit end ----------------------> c  
+
+<!-------------------------- edit ---------------------->
+<section class="et">
+   <div class="et-box boxsetuptab">
+     <div class="et-hdtab boxsetuptab-hd">
+        <ul class="clearboth ">
+           <li class="boxsetuptab-hd-item pull-left art"><i class="icon-yunico "></i>素材库</li>
+           <li class="boxsetuptab-hd-item pull-left"><i class="icon-setico "></i>参数设置</li>
+        </ul>
+     </div>
+     <div class="et-contab boxsetuptab-cn">
+        <!--------------------- 素材库----------------------------->
+        <div class="et-congp boxsetuptab-co-goup mat-box boxtab">
+            <div class="mat-ttab boxtab-t">
+               <ul class="">
+                  <li class="boxtab-t-item distable art">
+                     <div class="distablediv">
+                        <div>硬装</div>
+                        <div>套装</div>
+                     </div>
+                  </li>
+                  <li class="boxtab-t-item distable ">
+                     <div class="distablediv">
+                        <div>软装</div>
+                        <div>套装</div>
+                     </div>
+                  </li>
+                  <li class="boxtab-t-item distable ">
+                     <div class="distablediv">
+                        <div>配饰</div>
+                     </div>
+                  </li>
+                  <li class="boxtab-t-item distable ">
+                     <div class="distablediv">
+                        <div>设计</div>
+                     </div>
+                  </li>
+                  <li class="boxtab-t-item distable ">
+                     <div class="distablediv">
+                        <div>收藏</div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+            <div class="mat-con boxtab-c">
+               <div class="mat-congoup boxtab-c-goup">
+                 <div class="mat-classify dropdown-classify">
+                     <select name="state" class="defaultdown" tabindex="3" >
+                        <option>所有</option>
+                        <option>沙发</option> 
+                        <option>茶几</option> 
+                        <option>电视柜</option> 
+                        <option>展示柜</option> 
+                        <option>斗柜</option>
+                        <option>转椅</option> 
+                        <option>休闲椅</option> 
+                        <option>边几</option> 
+                        <option>餐边柜</option> 
+                        <option>床头柜</option>
+                        <option>衣柜</option> 
+                        <option>餐桌</option> 
+                        <option>餐椅</option> 
+                        <option>书桌</option> 
+                        <option>书柜</option>
+                        <option>床</option> 
+                        <option>客厅吊灯</option> 
+                        <option>卧室吊灯</option> 
+                        <option>书房吊灯</option>
+                        <option>床头吊灯</option>
+                        <option>梳妆台</option>
+                        <option>梳妆椅</option> 
+                     </select>
+                 </div>
+                 <div class="mat-group nicescroll_body">
+                    <ul class="clearboth">
+                       <!-------------  item  ------------------------>
+                       <li class="">
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li><!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="minuboxm">
+                                       <div class="nbpic"><img src="images/img/1.png"></div>
+                                       <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                       <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                       <div class="tienm"><span>价格：</span>120元</div>
+                                       <div class="cosem">
+                                          <div class="tiemw btn_Collection"></div>
+                                          <div class="tiemw btn_buy"></div>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       
+                    </ul>
+                 </div>
+               </div>
+               <!---------------group------------------------>
+               <div class="mat-congoup boxtab-c-goup none">
+                 <div class="mat-classify dropdown-classify">
+                     <select name="state" class="defaultdown" tabindex="3" >
+                        <option>所有</option>
+                        <option>沙发</option> 
+                        <option>茶几</option> 
+                        <option>电视柜</option> 
+                        <option>展示柜</option> 
+                        <option>斗柜</option>
+                        <option>转椅</option> 
+                        <option>休闲椅</option> 
+                        <option>边几</option> 
+                        <option>餐边柜</option> 
+                        <option>床头柜</option>
+                        <option>衣柜</option> 
+                        <option>餐桌</option> 
+                        <option>餐椅</option> 
+                        <option>书桌</option> 
+                        <option>书柜</option>
+                        <option>床</option> 
+                        <option>客厅吊灯</option> 
+                        <option>卧室吊灯</option> 
+                        <option>书房吊灯</option>
+                        <option>床头吊灯</option>
+                        <option>梳妆台</option>
+                        <option>梳妆椅</option> 
+                     </select>
+                 </div>
+                 <div class="mat-group nicescroll_body">
+                    <ul class="clearboth">
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                    </ul>
+                 </div>
+               </div>
+               <!---------------group------------------------>
+               <div class="mat-congoup boxtab-c-goup none">
+                 <div class="mat-classify dropdown-classify">
+                      <select name="state" class="defaultdown" tabindex="3" >
+                        <option>所有</option>
+                        <option>沙发</option> 
+                        <option>茶几</option> 
+                        <option>电视柜</option> 
+                        <option>展示柜</option> 
+                        <option>斗柜</option>
+                        <option>转椅</option> 
+                        <option>休闲椅</option> 
+                        <option>边几</option> 
+                        <option>餐边柜</option> 
+                        <option>床头柜</option>
+                        <option>衣柜</option> 
+                        <option>餐桌</option> 
+                        <option>餐椅</option> 
+                        <option>书桌</option> 
+                        <option>书柜</option>
+                        <option>床</option> 
+                        <option>客厅吊灯</option> 
+                        <option>卧室吊灯</option> 
+                        <option>书房吊灯</option>
+                        <option>床头吊灯</option>
+                        <option>梳妆台</option>
+                        <option>梳妆椅</option> 
+                     </select>
+                 </div>
+                 
+                 <div class="mat-group nicescroll_body">
+                    <ul class="clearboth">
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                    </ul>
+                 </div>
+               </div>
+               <!---------------group------------------------>
+               <div class="mat-congoup boxtab-c-goup none">
+                 <div class="mat-classify dropdown-classify">
+                      <select name="state" class="defaultdown" tabindex="3" >
+                        <option>所有</option>
+                        <option>沙发</option> 
+                        <option>茶几</option> 
+                        <option>电视柜</option> 
+                        <option>展示柜</option> 
+                        <option>斗柜</option>
+                        <option>转椅</option> 
+                        <option>休闲椅</option> 
+                        <option>边几</option> 
+                        <option>餐边柜</option> 
+                        <option>床头柜</option>
+                        <option>衣柜</option> 
+                        <option>餐桌</option> 
+                        <option>餐椅</option> 
+                        <option>书桌</option> 
+                        <option>书柜</option>
+                        <option>床</option> 
+                        <option>客厅吊灯</option> 
+                        <option>卧室吊灯</option> 
+                        <option>书房吊灯</option>
+                        <option>床头吊灯</option>
+                        <option>梳妆台</option>
+                        <option>梳妆椅</option> 
+                     </select>
+                 </div>
+                 
+                 <div class="mat-group nicescroll_body">
+                    <ul class="clearboth">
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                    </ul>
+                 </div>
+               </div>
+               <!---------------group------------------------>
+               <div class="mat-congoup boxtab-c-goup none">
+                 <div class="mat-classify dropdown-classify">
+                      <select name="state" class="defaultdown" tabindex="3" >
+                        <option>所有</option>
+                        <option>沙发</option> 
+                        <option>茶几</option> 
+                        <option>电视柜</option> 
+                        <option>展示柜</option> 
+                        <option>斗柜</option>
+                        <option>转椅</option> 
+                        <option>休闲椅</option> 
+                        <option>边几</option> 
+                        <option>餐边柜</option> 
+                        <option>床头柜</option>
+                        <option>衣柜</option> 
+                        <option>餐桌</option> 
+                        <option>餐椅</option> 
+                        <option>书桌</option> 
+                        <option>书柜</option>
+                        <option>床</option> 
+                        <option>客厅吊灯</option> 
+                        <option>卧室吊灯</option> 
+                        <option>书房吊灯</option>
+                        <option>床头吊灯</option>
+                        <option>梳妆台</option>
+                        <option>梳妆椅</option> 
+                     </select>
+                 </div>
+                 
+                 <div class="mat-group nicescroll_body">
+                    <ul class="clearboth">
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                       <!-------------  item  ------------------------>
+                       <li>
+                          <div class="m">
+                            <div class="mac">
+                                <div class="minu">
+                                   <div class="nbpic"><img src="images/img/1.png"></div>
+                                   <div class="tienm"><span>品牌：</span>凳子-中型模版Icon</div>
+                                   <div class="tienm"><span>厂商：</span>瑞阳科技con</div>
+                                   <div class="tienm"><span>价格：</span>120元</div>
+                                   <div class="cosem">
+                                      <div class="tiemw btn_Collection"></div>
+                                      <div class="tiemw btn_buy"></div>
+                                   </div>
+                                </div>
+                            </div>
+                             <div class="pic"><img src="images/img/1.png"></div>
+                         </div>
+                       </li>
+                    </ul>
+                 </div>
+               </div>
+            </div>
+        </div>
+        <!--------------------- 素材库 end ----------------------------->
+        <!--参数设置-->
+        <div class="et-congp boxsetuptab-co-goup pmt-box none">
+           <!----------------------- 参数设置 灯光  ---------------------------------->
+           <div class="pmt_row pmt_lighting none" id="pref_lighting">
+               <div class="pmt_row_hd pmt_lighting_hd">
+                  <div class="ico pull-left"></div>
+                  <div class="tname pull-left">灯光</div>
+               </div>
+               <div class="pmt_row_co nicescroll_body">
+                   <form action="" method="get">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_lighting_snbn">
+                      <div class=" pull-left patitem_name ">名称：</div>
+                      <div class=" pull-left patitem_ci">
+                         <input name="" type="text" class="from_cont from_patitem_cmhfou" value="元素名称">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem pmt_lighting_stly">
+                         <div class="listgroup clearboth">
+                            <a hidden="" class="btn_item btn pull-left btn_lighting btncluckadd " title="打开灯光"></a>
+                            <a hidden="" class="btn_item btn pull-left btn_shadow btncluckadd" title="打开阴影"></a>
+                            <a hidden="" class="btn_item btn pull-left btn_copy btncluckadd" title="复制灯光"></a>
+                            <a hidden="" class="btn_item btn pull-left btn_paste btncluckadd" title="粘贴灯光"></a>
+                            <a hidden="" class="btn_item btn pull-left btn_Independent btncluckadd" title="物体独立"></a>
+                         </div>
+                      </div>
+                     <!---------------------  item end -------------------------->
+                     <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_tyle">
+                      <div class=" pull-left patitem_name ">灯光类型:</div>
+                      <div class=" pull-left patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>点光源</option>
+                                <option>锥光源</option> 
+                                <option>面光源</option> 
+                                <option></option> 
+                                <option></option> 
+                                <option></option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                     <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_protin">
+                      <div class=" patitem_name ">纹理设置:</div>
+                      <div class=" lightingitem_protin_mov clearboth">
+                          <div class="npic pull-left"></div>
+                          <div class="info pull-left">
+                             <div class="titlename">纹理强度：1.0</div>
+                             <a href="" class="btn">删除纹理</a>
+                          </div>
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_colorn">
+                      <div class=" patitem_name ">更多设置:</div>
+                      <div class=" lightingitem_color_con clearboth">
+                         <div class=" pull-left">亮度：</div>
+                         <div class=" pull-left brightness_cin"><input name="" type="text"  class="from_cont from_brigomu" value="1500.0"></div>
+                         <div class=" pull-left">lm</div>
+                         <div class=" pull-left lightingitem_color_titl">颜色：</div>
+                         <div class=" pull-left lightingitem_color_clinb">
+                            <input type="hidden" class=" colorpickerclick" value=" #db913d">
+                         </div>
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">亮度倍增</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="width:;"  data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                     <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">仿光天化</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                     <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">阴影浓度</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">阴影柔化</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                     <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">阴影剪裁</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                     <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">阴影降燥</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                     <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">GI强度</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                     <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">阴影精度</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">亮度倍增</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                     </form>
+                   </div>
+                   
+           </div>
+           <!----------------------- 参数设置 灯光  end  ---------------------------------->
+           <!----------------------- 参数设置 相机  ---------------------------------->
+           <div class="pmt_row pmt_lighting none" id="pref_camera">
+               <div class="pmt_row_hd Camera_pmty_hd">
+                  <div class="ico pull-left"></div>
+                  <div class="tname pull-left">相机</div>
+               </div>
+               <div class="pmt_row_co nicescroll_body">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_lighting_snbn">
+                      <div class=" pull-left patitem_name ">名称：</div>
+                      <div class=" pull-left patitem_ci">
+                         <input name="" type="text" class="from_cont from_patitem_cmhfou" value="相机元素">
+                      </div>
+                   </div>
+                     <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem pmt_lighting_stly">
+                         <div class="listgroup clearboth">
+                            <a hidden="" class="btn_item btn pull-left btn_Independent btncluckadd" title="物体独立"></a>
+                            <a hidden="" class="btn_item btn pull-left btn_copy btncluckadd" title="复制当前相机值"></a>
+                            <a hidden="" class="btn_item btn pull-left btn_paste btncluckadd" title="粘贴复制的相机值"></a>
+                         </div>
+                      </div>
+                     <!---------------------  item end -------------------------->
+                     <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm pmtitem_renderer—switch pmtitem_renderer—srt">
+                      <div class=" patitem_name ">相机滤镜参数:</div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                     
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">曝光强度</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">固定曝光</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">泛光强度</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">对比度</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">锐化度</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">饱和度</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">色温</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">暗角</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">滤镜索引</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">滤镜强度</div>
+                      <div class=" pull-left patitem_ci">
+                         <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                     
+               </div>
+           </div>
+           <!----------------------- 参数设置  相机 end  ---------------------------------->
+           
+           <!----------------------- 参数设置 烘焙AO  ---------------------------------->
+           <div class="pmt_row pmt_lighting none" id="pref_baking_ao">
+               <div class="pmt_row_hd eakeAO_pmty_hd">
+                  <div class="ico pull-left"></div>
+                  <div class="tname pull-left">烘焙AO</div>
+               </div>
+               <div class="pmt_row_co nicescroll_body">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">纹理尺寸</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>动态分辨率</option>
+                                <option>4096 * 4096 分辨率</option> 
+                                <option>2048 * 2048 分辨率</option>
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">尺寸缩放</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>1倍</option>
+                                <option>2倍</option> 
+                                <option>4倍</option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">遮挡范围</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                             <select name="state" class="defaultdown" tabindex="3" >
+                                <option>16米衰减</option>
+                                <option>8米衰减</option>
+                                <option>4米衰减</option>
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">计算精度</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>低级计算精度</option>
+                                <option>中级计算精度</option> 
+                                <option>高级计算精度</option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">通道选择</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>系统自动展开UV纹理</option>
+                                <option>模型纹理坐标1</option> 
+                                <option>模型纹理坐标2</option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">遮挡物体</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                             <select name="state" class="defaultdown" tabindex="3" >
+                                <option>仅当前物体</option>
+                                <option>全部静态物体</option> 
+                                <option>全部物体</option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">虚拟地面</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>无虚拟地面</option>
+                                <option>包围盒低面接地</option> 
+                                <option>包围盒顶面接地</option> 
+                             </select>
+                         </div>
+                         
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+               </div>
+           </div>
+           <!----------------------- 参数设置 烘焙AO end  ---------------------------------->
+           <!----------------------- 参数设置 烘焙GI  ---------------------------------->
+           <div class="pmt_row pmt_lighting none" id="pref_baking_gi">
+               <div class="pmt_row_hd eakegi_pmty_hd">
+                  <div class="ico pull-left"></div>
+                  <div class="tname pull-left">烘焙GI</div>
+               </div>
+               <div class="pmt_row_co nicescroll_body">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">纹理尺寸</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>动态分辨率</option>
+                                <option>4096 * 4096 分辨率</option> 
+                                <option>2048 * 2048 分辨率</option>
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm ">
+                      <div class="patitem_name ">尺寸缩放</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>1倍</option>
+                                <option>2倍</option> 
+                                <option>4倍</option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">遮挡范围</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>16米衰减</option>
+                                <option>8米衰减</option>
+                                <option>4米衰减</option>
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">计算精度</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                              <select name="state" class="defaultdown" tabindex="3" >
+                                <option>低级计算精度</option>
+                                <option>中级计算精度</option> 
+                                <option>高级计算精度</option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">通道选择</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                             <select name="state" class="defaultdown" tabindex="3" >
+                                <option>系统自动展开UV纹理</option>
+                                <option>模型纹理坐标1</option> 
+                                <option>模型纹理坐标2</option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">遮挡物体</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                            <select name="state" class="defaultdown" tabindex="3" >
+                                <option>仅当前物体</option>
+                                <option>全部静态物体</option> 
+                                <option>全部物体</option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+               </div>
+           </div>
+           <!----------------------- 参数设置 烘焙AO end  ---------------------------------->
+           
+           
+           <!----------------------- 参数设置 渲染器  ---------------------------------->
+           <div class="pmt_row pmt_lighting none" id="pref_Renderer">
+               <div class="pmt_row_hd vive_pmty_hd">
+                  <div class="ico pull-left"></div>
+                  <div class="tname pull-left">渲染器</div>
+               </div>
+               <div class="pmt_row_co nicescroll_body">
+                  <!---------------------  group -------------------------->
+                  <div class="pmtgroup_renderer">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm pmtitem_renderer—switch">
+                      <div class="patitem_name ">渲染器设置</div>
+                      <div class="patitem_ci">
+                         <div class="viveswitch_brn">打开渲染器</div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">全局光</div>
+                      <div class=" pull-left patitem_ci">
+                         <div class="pmtrenderer_btnbox">
+                            <ul class=" pull-left pmtrenderer_btngroup tabradio">
+                               <li class="pull-left  pmtrenderer_btnitem tabradioitem ">低</li>
+                               <li class="pull-left  pmtrenderer_btnitem tabradioitem art">中</li>
+                               <li class="pull-left  pmtrenderer_btnitem tabradioitem ">高</li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                    <!---------------------  item end -------------------------->
+                    <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">灯光</div>
+                      <div class=" pull-left patitem_ci">
+                         <div class="pmtrenderer_btnbox">
+                            <ul class=" pull-left pmtrenderer_btngroup tabradio">
+                               <li class="pull-left pmtrenderer_btnitem tabradioitem  ">低</li>
+                               <li class="pull-left  pmtrenderer_btnitem tabradioitem  art">中</li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                    <!---------------------  item end -------------------------->
+                    <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">阴影光</div>
+                      <div class=" pull-left patitem_ci">
+                         <div class="pmtrenderer_btnbox">
+                            <ul class=" pull-left pmtrenderer_btngroup tabradio">
+                               <li class="pull-left  pmtrenderer_btnitem tabradioitem ">低</li>
+                               <li class="pull-left  pmtrenderer_btnitem tabradioitem art">中</li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                    <!---------------------  item end -------------------------->
+                    <!---------------------  item -------------------------->
+                   <div class="patitem clearboth lightingitem_srtm">
+                      <div class=" pull-left patitem_name ">抗锯齿</div>
+                      <div class=" pull-left patitem_ci">
+                         <div class="pmtrenderer_btnbox">
+                            <ul class=" pull-left pmtrenderer_btngroup tabradio">
+                               <li class="pull-left pmtrenderer_btnitem tabradioitem  ">低</li>
+                               <li class="pull-left pmtrenderer_btnitem tabradioitem  art">中</li>
+                               <li class="pull-left pmtrenderer_btnitem tabradioitem ">搞</li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                    <!---------------------  item end -------------------------->
+                  </div>
+                   <!---------------------  group end -------------------------->
+                   <!---------------------  group -------------------------->
+                  <div class="pmtgroup_renderer">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm pmtitem_renderer—switch pmtitem_renderer—srt">
+                      <div class="patitem_name ">天空设置</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                            <select name="state" class="defaultdown" tabindex="3" >
+                                <option>动态天空</option>
+                                <option>纹理天空</option> 
+                                <option>背景颜色</option>
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------天空设置 动态天空 -------------------------->
+                   <div class=" none">
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">时间</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti">
+                          <div class=" pull-left patitem_name ">方位</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti">
+                          <div class=" pull-left patitem_name ">云量</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti">
+                          <div class=" pull-left patitem_name ">雾气</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                    </div>
+                    <!---------------------天空设置 动态天空 end -------------------------->
+                    <!---------------------天空设置 纹理天空 -------------------------->
+                   <div class=" none ">
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti texturesky_shimg">
+                             <input name="" type="file" class="choiceclass">
+                             <div class="texturesky_shimg_main">
+                             <img src="images/tiwn.jpg" /> </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti">
+                          <div class=" pull-left patitem_name ">亮度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti">
+                          <div class=" pull-left patitem_name ">方向</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                   </div>
+                   <!---------------------天空设置 纹理天空 end -------------------------->
+                   <!---------------------天空设置 背景颜色 -------------------------->
+                   <div class=" ">
+                         
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti">
+                          <div class=" pull-left patitem_name ">顶部颜色</div>
+                          <div class=" pull-left patitem_ci">
+                              <div class="texturesky_backgroundcolor" >
+                                 <input type="hidden" class=" colorpickerclick" value="#db913d">
+                              </div>
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti">
+                          <div class=" pull-left patitem_name ">底部颜色</div>
+                          <div class=" pull-left patitem_ci">
+                              <div class="texturesky_backgroundcolor">
+                                 <input type="hidden" class=" colorpickerclick" value=" #db913d">
+                              </div>
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti">
+                          <div class=" pull-left patitem_name ">亮度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                   </div>
+                   <!---------------------天空设置 背景颜色 end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth lightingitem_srtm">
+                          <div class=" pull-left patitem_name ">背景</div>
+                          <div class=" pull-left patitem_ci">
+                             <div class="pmtrenderer_btnbox">
+                                <ul class=" pull-left pmtrenderer_btngroup tabradio">
+                                   <li class="pull-left pmtrenderer_btnitem tabradioitem  ">隐藏</li>
+                                   <li class="pull-left pmtrenderer_btnitem tabradioitem  art">显示</li>
+                                </ul>
+                             </div>
+                          </div>
+                       </div>
+                        <!---------------------  item end -------------------------->
+                    
+                  </div>
+                   <!---------------------  group end -------------------------->
+                  <!---------------------  group -------------------------->
+                  <div class="pmtgroup_renderer">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth  pmtitem_renderer—switch pmtitem_renderer—srt">
+                      <div class=" pull-left patitem_name ">环境设置</div>
+                      <div class=" pull-left patitem_ci">
+                        <div class="patitem_panflft">
+                         <div class="dropdown-classify">
+                             <select name="state" class="defaultdown" tabindex="3" >
+                                <option>标准</option>
+                                <option>高级</option> 
+                             </select>
+                         </div>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------环境设置 标准 -------------------------->
+                   <div class="">
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">阳光亮度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">阳光光芒</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                   </div>
+                   <!--------------------- 环境设置 标准 end -------------------------->
+                   <!--------------------- 环境设置 高级 -------------------------->
+                   <div class="">
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">阳光浓度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">天光亮度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">天光浓度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">阴影模糊</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">AO强度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                         <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">AO范围</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                         <!---------------------  item end -------------------------->
+                   </div>
+                   <!--------------------- 环境设置 高级 end -------------------------->
+                  </div>
+                   <!---------------------  group end -------------------------->
+                   <!---------------------  group -------------------------->
+                  <div class="pmtgroup_renderer">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth  pmtitem_renderer—switch pmtitem_renderer—srt">
+                      <div class=" pull-left patitem_name ">镜头特效</div>
+                      <div class=" pull-left patitem_ci">
+                        <div class="patitem_panflft">
+                         <div class="dropdown-classify">
+                            <select name="state" class="defaultdown" tabindex="3" >
+                                <option>标准</option>
+                                <option>高级</option> 
+                             </select>
+                         </div>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!--------------------- 镜头特效 标准 -------------------------->
+                   <div class="">
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">曝光度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">泛光强度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">对比度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">饱和度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">色温</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       
+                   </div>
+                   <!--------------------- 镜头特效 标准 end -------------------------->
+                   <!--------------------- 镜头特效 高级 -------------------------->
+                   <div class="">
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">固定曝光</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">锐化度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">暗角</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">色版风格</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth pmtitem_landti ">
+                          <div class=" pull-left patitem_name ">色版强度</div>
+                          <div class=" pull-left patitem_ci">
+                             <input class="easyui-slider" style="" data-options="showTip:true,min:0,max:10,tipFormatter:function(value){return (value/10.0).toFixed(2);}">
+                          </div>
+                       </div>
+                       <!---------------------  item end -------------------------->
+                      
+                   </div>
+                   <!--------------------- 镜头特效 高级 end -------------------------->
+                  </div>
+                   <!---------------------  group end -------------------------->
+                   
+               </div>
+           </div>
+           <!----------------------- 参数设置  渲染器 end  ---------------------------------->
+           
+           <!----------------------- 参数设置 输出全景  ---------------------------------->
+           <div class="pmt_row pmt_lighting none" id="pref_panoramao">
+               <div class="pmt_row_hd vive_panorama_hd">
+                  <div class="ico pull-left"></div>
+                  <div class="tname pull-left">输出全景</div>
+               </div>
+               <div class="pmt_row_co nicescroll_body">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">分辨率</div>
+                      <div class="patitem_ci">
+                         <div class="dropdown-classify">
+                             <select name="state" class="defaultdown" tabindex="3" >
+                                <option>标准{2048}</option>
+                                <option>2K{2048}</option> 
+                                <option>4K{4096}</option> 
+                                
+                             </select>
+                         </div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm ">
+                      <div class="patitem_name ">自定义设置</div>
+                      <div class="patitem_ci panorama_ettings">
+                         <input name="" type="text" class="from_cont panoramaname">
+                         <div class="patitem_ci panorama_ettings clearboth">
+                             <div class=" pull-left panoimpurt_box">
+                                <input name="" type="file" class="choiceclass">
+                                <div class="pon_btn impurt_btn">上传背景音乐</div>
+                             </div>
+                             <div class="pull-right">
+                                <a href="" class="pon_btn del_btn">删除</a>
+                             </div>
+                         </div>
+                         
+                         <div class="panorama_ettings panoimpurt_music">
+                            陈奕迅 - 不如不见.mp3
+                         </div>
+                         <div class="patitem_ci panorama_ettings clearboth">
+                             <div class=" pull-left panoimpurt_box">
+                                <input name="" type="file" class="choiceclass">
+                                <div class="pon_btn impurt_btn">上床LOGO图标</div>
+                             </div>
+                             <div class="pull-right">
+                                <a href="" class="pon_btn del_btn">删除</a>
+                             </div>
+                         </div>
+                         <div class="panorama_ettings panoimpurt_impurtlogo">
+                            <img src="images/p2-pic_05.jpg"> 
+                         </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm patitemhic_moutput">
+                      <div class="patitem_ci clearboth ">
+                                <input type="submit" class="pon_btn  output_btn" name="" id="" value="输出" />
+                         </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+               </div>
+           </div>
+           </div>
+           <!----------------------- 参数设置  输出全景 end  ---------------------------------->
+           <!----------------------- 参数设置 VR体验  ---------------------------------->
+           <div class="pmt_row pmt_lighting none" id="pref_vrexperience">
+               <div class="pmt_row_hd vive_pmty_hd">
+                  <div class="ico pull-left"></div>
+                  <div class="tname pull-left">VR体验</div>
+               </div>
+               <div class="pmt_row_co nicescroll_body">
+                   <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_hicm">
+                      <div class="patitem_name ">Vive全景头盔</div>
+                      <div class="patitem_ci">
+                         <div class="viveswitch_brn">Vive  开</div>
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+               </div>
+           </div>
+           <!----------------------- 参数设置  VR体验 end  ---------------------------------->
+           
+           <!----------------------- 参数设置 模型属性  ---------------------------------->
+           <div class="pmt_row pmt_lighting none" id="pref_modelproperties">
+               <div class="pmt_row_hd moublecprompt_pmt">
+                  <div class="ico pull-left"></div>
+                  <div class="tname pull-left">模型属性</div>
+               </div>
+               <div class="pmt_row_co nicescroll_body">
+                  <!---------------------  item -------------------------->
+                   <div class="patitem clearboth patitem_lighting_snbn">
+                      <div class=" pull-left patitem_name ">名称：</div>
+                      <div class=" pull-left patitem_ci">
+                         <input name="" type="text" class="from_cont from_patitem_cmhfou" value="相机元素">
+                      </div>
+                   </div>
+                   <!---------------------  item end -------------------------->
+                  <!---------------------  模块标签 -------------------------->
+                  <div class="pmtgroup_renderer">
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth patitem_hicm ">
+                          <div class="patitem_name ">添加标签</div>
+                          <!---------------------  item -------------------------->
+                       </div>
+                       <!---------------------  item end -------------------------->
+                       <div class="modelproperties_sienb">
+                          <ul class=" tabradio clearboth">
+                              <li class="pull-left morlprromp_collomitem  tabradioitem  art">
+                                 <legend class="clearboth">
+                                    <input name="" type="radio" value="" class="choiceclass">
+                                     <div class="pull-left irncu"></div>
+                                     <div class="pull-left text">硬装</div>
+                                 </legend>
+                              </li>
+                              <li class="pull-left morlprromp_collomitem tabradioitem  ">
+                                 <legend class="clearboth">
+                                    <input name="" type="radio" value="" class="choiceclass">
+                                     <div class="pull-left irncu"></div>
+                                     <div class="pull-left text">软装</div>
+                                 </legend>
+                              </li>
+                          </ul>
+                       </div>
+                       <!---------------------  item -------------------------->
+                       <div class="patitem clearboth lightingitem_tyle">
+                          <div class=" pull-left patitem_name ">分类:</div>
+                          <div class=" pull-left patitem_ci">
+                             <div class="dropdown-classify">
+                                  <select name="state_b" class="defaultdown" tabindex="3" >
+                                    <option>边几</option>
+                                    
+                                 </select>
+                             </div>
+                          </div>
+                       </div>
+                     <!---------------------  item end -------------------------->
+                     <div class="patitem clearboth patitem_hicm ">
+                          <div class="patitem_name ">规格</div>
+                          <!---------------------  item -------------------------->
+                       </div>
+               </div>
+           </div>
+           <!----------------------- 参数设置  模型属性 end  ---------------------------------->
+        
+        
+     </div>
+   </div>
+</section>
+<!-------------------------- edit end ---------------------->
+
+
+
+<!-------------------------- draw unit end ---------------------->
+<section class="popup popupbg distable none draw_cont" id="drawunitbox" style=" display:none;">
+   <div class="distablediv">
+       <div class="popupcontainer  draw_unitcontainer">
+          <div class="drawunit_hdnav">
+             <ul class=" pull-left group">
+                <li class=" pull-left item brnunit_open"></li>
+                <li class=" pull-left item brnunit_keep"></li>
+                <li class=" pull-left item brnunit_import"></li>
+                <li class=" pull-left item brnunit_ruler"></li>
+             </ul>
+             <ul class=" pull-left group">
+                <li class=" pull-left item brnunit_rectanglewall"></li>
+                <li class=" pull-left item brnunit_onesidewal"></li>
+                <li class=" pull-left item brnunit_window"></li>
+                <li class=" pull-left item brnunit_door"></li>
+                <li class=" pull-left item brnunit_wallhole"></li>
+                <li class=" pull-left item brnunit_pillar"></li>
+                <li class=" pull-left item brnunit_box"></li>
+                <li class=" pull-left item brnunit_beam"></li>
+                <li class=" pull-left item brnunit_backgroundwall"></li>
+                <li class=" pull-left item brnunit_furredceiling"></li>
+                <li class=" pull-left item brnunit_Floortile"></li>
+             </ul>
+             <ul class=" pull-left group">
+                <li class=" pull-left item brnunit_sofa"></li>
+                <li class=" pull-left item brnunit_television"></li>
+                <li class=" pull-left item brnunit_table"></li>
+                <li class=" pull-left item brnunit_bed"></li>
+                <li class=" pull-left item brnunit_desk"></li>
+             </ul>
+             <ul class=" pull-left group">
+                <li class=" pull-left item brnunit_kitchen"></li>
+                <li class=" pull-left item brnunit_toilet"></li>
+             </ul>
+          </div>
+          <div class="drawunit_mc clearboth">
+             <div class="drawunit_workspace pull-left">
+                
+            </div>
+            <div class="drawunit_rg pull-right">
+               <div class="drawunit_sumv"></div>
+               <div class="drawunit_buttin">
+                  <a href="" class="btn">确定</a>
+                  <a href="" class="btn">取消</a>
+               </div>
+            </div>
+          </div>
+       </div>
+   </div>
+</section>
+<!-------------------------- draw unit end ---------------------->
+
+<!-------------------------- 设计清单 ---------------------->
+<section class="popup distable" id="boxdeisngron" style=" display: none;">
+   <div class="distablediv">
+     <div class="inventorybox">
+        <div class="Closebtn"></div>
+        <div class="tinventorybox_hd"><span>设计清单</span></div>
+        <div class="tinventorybox_co nicescroll_body">
+           <div class="tinventorybox_grow">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tinventorybox_group">
+                  <tr>
+                    <th scope="row"  width="50">索引</th>
+                    <th>图列</th>
+                    <th>名称</th>
+                    <th>生产商</th>
+                    <th>价格</th>
+                    <th>用量</th>
+                    <th>总价</th>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                </table>
+
+           </div>
+           <div class="tinventorybox_grow">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tinventorybox_group">
+                  <tr>
+                    <th scope="row" width="50">索引</th>
+                    <th>图列</th>
+                    <th>名称</th>
+                    <th>生产商</th>
+                    <th>价格</th>
+                    <th>用量</th>
+                    <th>总价</th>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">统计</td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>0.00 元</td>
+                  </tr>
+                </table>
+
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
+<!--文件管理器-->
+<section class="popup distable none Filemanagerdom" style="display:none;">
+   <div class="distablediv">
+     <div class="Filemanager">
+        <div class="Filemanager_hd clearboth">
+           <div class="pull-left btn arrow_left"></div>
+           <div class="pull-left btn arrow_right"></div>
+           <div class="pull-left btn arrow_top"></div>
+           <div class="pull-left route">
+             <input name="" type="text" value=" C:/Users/aihuwang/Desktop/bin/bin/" class="route_text">
+           </div>
+        </div>
+        <div class="Filemanager_co clearboth boxtab ">
+           <div class=" pull-left Filemanager_catalog boxtab-t">
+              <ul class="boxtab-t">
+                 <li class="disk boxtab-t-item"><i></i> <span>本地磁盘（C）</span></li>
+                 <li class="disk boxtab-t-item"><i></i> <span>本地磁盘（D）</span></li>
+                 <li class="disk boxtab-t-item"><i></i> <span>本地磁盘（F）</span></li>
+                 <li class="library boxtab-t-item"><i></i> <span>资源目录</span></li>
+                 <li class="library boxtab-t-item"><i></i> <span>场景库</span></li>
+                 <li class="library boxtab-t-item"><i></i> <span>角色库</span></li>
+                 <li class="library boxtab-t-item"><i></i> <span>网络资源库</span></li>
+                 <li class="library boxtab-t-item"><i></i> <span>纹理库</span></li>
+              </ul>
+           </div>
+           <div class=" pull-right Filemanager_filebox boxtab-c ">
+              <!----------------geoup ------------------------->
+              <div class="Filemanager_filegroup boxtab-c-goup nicescroll_body">
+                 <ul class="clearboth">
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                 </ul>
+              </div>
+              <!----------------geoup end ------------------------->
+              <!----------------geoup ------------------------->
+              <div class="Filemanager_filegroup boxtab-c-goup nicescroll_body none">
+                 <ul class="clearboth">
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                 </ul>
+              </div>
+              <!----------------geoup end ------------------------->
+              <!----------------geoup ------------------------->
+              <div class="Filemanager_filegroup boxtab-c-goup nicescroll_body none">
+                 <ul class="clearboth">
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                 </ul>
+              </div>
+              <!----------------geoup end ------------------------->
+              <!----------------geoup ------------------------->
+              <div class="Filemanager_filegroup boxtab-c-goup nicescroll_body none">
+                 <ul class="clearboth">
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                 </ul>
+              </div>
+              <!----------------geoup end ------------------------->
+              <!----------------geoup ------------------------->
+              <div class="Filemanager_filegroup boxtab-c-goup nicescroll_body none">
+                 <ul class="clearboth">
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                 </ul>
+              </div>
+              <!----------------geoup end ------------------------->
+              <!----------------geoup ------------------------->
+              <div class="Filemanager_filegroup boxtab-c-goup nicescroll_body none">
+                 <ul class="clearboth">
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                 </ul>
+              </div>
+              <!----------------geoup end ------------------------->
+              <!----------------geoup ------------------------->
+              <div class="Filemanager_filegroup boxtab-c-goup nicescroll_body none">
+                 <ul class="clearboth">
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                 </ul>
+              </div>
+              <!----------------geoup end ------------------------->
+              <!----------------geoup ------------------------->
+              <div class="Filemanager_filegroup boxtab-c-goup nicescroll_body none">
+                 <ul class="clearboth">
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">速度快福建省的咖啡机是考虑到积分</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                    <li class=" pull-left item">
+                       <div class="fl"></div>
+                       <div class="tiel">11212</div>
+                    </li>
+                 </ul>
+              </div>
+              <!----------------geoup end ------------------------->
+           </div>
+        </div>
+        <div class="Filemanager_ft clearboth ">
+            <div class="pull-left filename">
+                <input name="" type="text" value=" 请输入文件名称 " class="filename_text">
+            </div>
+            <div class="pull-right Filemanager_submit">
+               <select name="" class="gormtype">
+                  <option>.ract</option>
+               </select>
+               <input name="" type="button" value="保持" class="btn" />
+               <input name="" type="button" value="取消" class="btn Closebtn" />
+            </div>
+        </div>
+     </div>
+   </div>
+</section>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+@charset "utf-8";
+body{ background:#dde6ef;}
+/* header */
+.hd{ height:83px; width:100%; overflow:hidden;position:fixed; left:0; top:0; background:#f1f1f1; border-bottom:2px solid #d7d7d7; }
+.hd .hd-w{ padding-left:58px;}
+.hd .nav-group{ margin-right:64px; }
+.hd .nav-group-a{ margin-right:120px;}
+.hd .nav-group-e{ margin-right:220px;}
+.hd .nav-group .nav-item{ width:60px; height:73px; font-size:12px; text-align:center; position:relative; margin:5px 0px;}
+.hd .nav-group .btn-draw{ background:url(../images/HouseBuild.png) center -20px  no-repeat}
+.hd .nav-group .btn-newlybuild{background:url(../images/New.png) center -20px  no-repeat}
+.hd .nav-group .brn-open{background:url(../images/Open.png) center -20px  no-repeat}
+.hd .nav-group .brn-keep{background:url(../images/Save.png) center -20px  no-repeat}
+.hd .nav-group .brn-ImportActor{background:url(../images/ImportActor.png) center -20px  no-repeat}
+.hd .nav-group .brn-ExportActor{background:url(../images/ExportActor.png) center -20px  no-repeat}
+.hd .nav-group .brn-ImportLight_button{background:url(../images/ImportLight_button.png) center -20px  no-repeat}
+.hd .nav-group .btn-ImportCamera_button{background:url(../images/ImportCamera_button.png) center -20px  no-repeat}
+.hd .nav-group .brn-Bake_AO{background:url(../images/Bake_AO.png) center -20px  no-repeat}
+.hd .nav-group .btn-Bake_GI{background:url(../images/Bake_GI.png) center -20px  no-repeat}
+.hd .nav-group .btn-Run{background:url(../images/Run.png) center -20px  no-repeat}
+.hd .nav-group .btn-setPara_Default{background:url(../images/setPara_Default.png) center -20px  no-repeat}
+.hd .nav-group .brn-Overall_View{background:url(../images/Overall_View.png) center -20px  no-repeat}
+.hd .nav-group .brn-Show_in_VR{background:url(../images/Show_in_VR.png) center -20px  no-repeat}
+.hd .nav-group .btn-help{background:url(../images/ccc.png) center -20px  no-repeat}
+.hd .nav-group .btn-ListItem{background:url(../images/ListItem.png) center -20px  no-repeat}
+@media (max-width:1366px){
+.hd .hd-w{ padding-left:40px;}
+.hd .nav-group{ margin-right:40px; }
+.hd .nav-group-a{ margin-right:60px;}
+.hd .nav-group-e{ margin-right:60px;}
+}
+
+.hdheigh{ height:85px;}
+.makebox{ height:calc(100% - 100px); margin-right:320px;}
+/* -------------------------- edit ----------------------*/
+.et{ width:320px;height:calc(100% - 85px);background:#fff; position:fixed; right:0; top:84px; }
+.et-box,.et-contab,.et-congp{ height:100%;}
+.et .et-hdtab{ height:50px;}
+.et .et-hdtab li{ width:calc(50% - 1px); height:50px; font-size:16px; cursor:pointer; background:#dcdcdc; text-align:center; line-height:50px; border-right:1px solid #c6c6c6;}
+.et .et-hdtab li.art{ background:#f2f2f2;}
+.et .et-hdtab li i{ display:inline-block; font-size:18px; vertical-align:middle; margin-right:6px; margin-top:-3px;}
+.mat-box{ background:#f0f0f0; position:relative;}
+.mat-ttab{ position: absolute; right:0; width:50px; height:100%; background:#fff;}
+.mat-ttab li{ height:50px; width:100%; text-align:center; cursor: pointer; border-bottom:1px solid #c1c1c1; background:#d8d8d8;}
+.mat-ttab li.art{ background:#f0f0f0;}
+.mat-con{ margin-right:50px; height:100%; padding:10px; padding-right:0; }
+
+/*素材库*/
+.mat-congoup{ height:100%; width:100%;}
+.mat-classify{ padding-right:10px;}
+.mat-group{ margin-top:10px; width:100%;  height:calc(100% - 110px);}
+.mat-con .mat-group ul{ margin-left:-10px; margin-right:10px;}
+.mat-con .mat-group li{ width:50%; float:left; height:120px;  margin-bottom:10px;}
+.mat-con .mat-group li .m{ margin-left:10px; height:120px; background:#fff; position:relative;}
+.mat-con .mat-group li .m .pic{ position:;}
+.mat-con .mat-group li .m .pic img{ display:block; width:100%; height:100%;}
+.mat-con .mat-group li .m .mac{ position: absolute;z-index:1;}
+.mat-con .mat-group li .m .mac:hover{ z-index:9;}
+.mat-con .mat-group li .m .mac:before{ content:""; position:absolute; right:-14px; border-width:7px; border-style:solid; border-color:transparent; border-left-color:#9b9b9b; border-top-color:#9b9b9b;}
+.mat-con .mat-group li .m .mac .minu{ position: relative;  display:none; margin-left:-250px;}
+.mat-con .mat-group li .m .mac .minu .minuboxm{ position:fixed; top:auto; height:245px; width:200px; padding-left:50px; margin-top:0px; top: auto; padding-top:5px; background:#fff; border:1px solid #d7d7d7; }
+.mat-con .mat-group li .m .mac:hover:before{border-left-color:#419bf9; border-top-color:#419bf9;}
+.mat-con .mat-group li .m .mac:hover .minu{ display:block;}
+.mat-con .mat-group li .m .mac:hover .minu .nbpic,.mat-con li .m .mac:hover .minu .nbpic img { height:150px;  width:150px;}
+.mat-con .mat-group li .m .mac:hover .minu .nbpic{ margin-bottom:5px;}
+.mat-con .mat-group li .m .mac:hover .minu .tienm{ line-height:24px; font-size:12px;}
+.mat-con .mat-group li .m .mac:hover .minu .tienm span{ color:#a6a6a6;}
+.mat-con .mat-group li .cosem{ position:absolute; right:10px; bottom:10px;}
+.mat-con .mat-group li .cosem .tiemw{ float:left; width:27px; height:27px; margin-left:5px;}
+
+.mat-con .mat-group li .cosem .tiemw.btn_Collection{ background:url(../images/CollectDefault.png) no-repeat;}
+.mat-con .mat-group li .cosem .tiemw.btn_Collection.art{ background:url(../images/Collected.png) no-repeat;}
+.mat-con .mat-group li .cosem .tiemw.btn_buy{ background:url(../images/BuyIcon_mb.png) no-repeat;}
+/*素材库 end */
+
+.pmt_row{ padding:28px 35px; height:calc(100% - 70px); }
+.pmt_row_hd{ height:45px;}
+.pmt_row_hd .ico{ width:45px; height:45px; background:#eee; margin-right:2px;}
+.pmt_row_hd .tname{ line-height:42px;  font-size:18px; font-weight:bold;}
+.pmt_row_co{ height:calc(100% - 90px); margin-top:10px;}
+.patitem{ padding:10px 0;}
+
+.pmt_lighting_hd .ico{ background: url(../images/ImportLight_t_ico.png) no-repeat;}
+.patitem .patitem_name{ font-size:16.5px; line-height:36px; width:85px;}
+.patitem .patitem_ci{ width:165px;}
+
+.patitem_hicm{ padding:6px 0;}
+.patitem_hicm .patitem_name{ font-size:16.5px; line-height:36px; width:100%; color:#999;}
+.patitem_hicm .patitem_ci{ width:100%; margin-top:1px;}
+
+
+/*灯光*/
+.patitem_lighting_snbn{ margin-top:5px; padding-bottom:5px;}
+.patitem_lighting_snbn .patitem_name{ width:75px;}
+.from_patitem_cmhfou{ border:0;  font-size:16px;}
+.from_patitem_cmhfou:focus{ background:#eee;}
+.patitem_lighting_snbn  .patitem_name{ color:#999; font-size:16px;}
+.pmt_lighting_stly{ padding:6px 0 10px 0;}
+.pmt_lighting_stly .listgroup{ margin-left:-10px; margin-right:-10px;}
+.pmt_lighting_stly .btn_item{ width:34px; padding:0;height:34px; background:#f5f5f5; margin:0 9px;}
+.pmt_lighting_stly .btn_item.btn_lighting{background: url(../images/lightOpen.png) center no-repeat;}
+.pmt_lighting_stly .btn_item.btn_lighting.art{background: url(../images/lightClose.png) center no-repeat;}
+.pmt_lighting_stly .btn_item.btn_shadow{background: url(../images/lightOpenShadow.png) center no-repeat;}
+.pmt_lighting_stly .btn_item.btn_shadow.art{background: url(../images/lightCloseShadow.png) center no-repeat;}
+.pmt_lighting_stly .btn_item.btn_copy{background: url(../images/lightCopy0.png) center no-repeat;}
+.pmt_lighting_stly .btn_item.btn_copy.art{background: url(../images/lightCopy1.png) center no-repeat;}
+.pmt_lighting_stly .btn_item.btn_paste{background: url(../images/lightPaste.png) center no-repeat;}
+.pmt_lighting_stly .btn_item.btn_paste.art{background: url(../images/lightPaste1.png) center no-repeat;}
+.pmt_lighting_stly .btn_item.btn_Independent{background: url(../images/IsolateItem.png) center no-repeat;}
+.pmt_lighting_stly .btn_item.btn_Independent.art{background: url(../images/IsolateItem.png) center no-repeat;}
+
+
+.lightingitem_protin{ padding-top:0;}
+.lightingitem_protin .patitem_name{ color:#999;}
+.lightingitem_protin .lightingitem_protin_mov{ margin-top:11px; width:auto;}
+.lightingitem_protin .npic{ width:80px; float:left; height:80px; background: url(../images/lightPic.png) no-repeat; cursor:pointer; margin-right:15px;}
+.lightingitem_protin .info{ width:155px; }
+.lightingitem_protin .info .titlename{ height:45px; line-height:35px; font-size:16px;}
+.lightingitem_protin .info .btn{ border:1px solid #dbdbdb; background:#f2f2f2; padding:0; width:100%; height:33px; font-size:16px; line-height:33px;}
+.lightingitem_colorn{ padding-top:4px; padding-bottom:28px;}
+.lightingitem_colorn .patitem_name{ color:#999;}
+.lightingitem_colorn .brightness_cin{ width:60px;}
+.lightingitem_color_con{ margin-top:9px;line-height:28px; font-size:16.5px;}
+.from_brigomu{ height:20px; border:0; line-height:30px;}
+.from_brigomu:focus{ background:#eee;}
+.lightingitem_color_titl{ margin-left:13px;}
+.lightingitem_color_clinb{ width:60px; height:30px;}
+.lightingitem_srtm{ padding:7px 0;}
+
+.Camera_pmty_hd .ico{ background: url(../images/ImportCamera_ocpyime.png) no-repeat;}
+.eakeAO_pmty_hd .ico{ background: url(../images/Bake_AO_pmty.png) no-repeat;}
+.eakegi_pmty_hd .ico{ background: url(../images/Bake_GI_pmty.png) no-repeat;}
+.vive_panorama_hd .ico{ background: url(../images/Overall_View_mpy.png) no-repeat;}
+
+.vive_pmty_hd .ico{ background: url(../images/Showin_VR_pmt.png) no-repeat;}
+.viveswitch_brn{ background:#eee; padding:8px; font-weight:bold; border:1px solid #dedede; border-radius:5px; text-align:center; font-size:17px; cursor:pointer;}
+.panoramaname{ border:0;}
+.panorama_ettings{ margin-bottom:10px;}
+.panoimpurt_box{ position:relative; width:160px;}
+.pon_btn{ background:#f1f1f1; width:calc(100% - 18px); display:block; padding:8px; border:1px solid #dadada; cursor:pointer; text-align:center; border-radius:5px; font-size:15px;}
+.del_btn{ width:60px; color:#999; display:block;}
+.panoimpurt_impurtlogo img{ max-width:100%; min-height:100%; background:#eee;}
+.output_btn{width:calc(100% - 0px);}
+.patitemhic_moutput{ margin-top:40px;}
+
+/*渲染器*/
+
+.pmtgroup_renderer{ margin-bottom:15px;}
+.pmtitem_renderer—switch .patitem_name{ color:#333; line-height:1.7em;}
+.pmtitem_renderer—switch .patitem_ci{ margin-top:0;}
+.pmtitem_renderer—switch{ padding-bottom:15px;}
+.pmtrenderer_btnbox{ margin-left:10px;;}
+.pmtrenderer_btnbox .pmtrenderer_btngroup{ border:1px solid #c8c8c8; text-align:center; width:auto; background:#dcdcdc; font-size:16px;}
+.pmtrenderer_btnbox .pmtrenderer_btngroup .pmtrenderer_btnitem{table-layout:auto; width:35px; cursor:pointer; line-height:32px; height:32px; padding:0px 7px;}
+.pmtrenderer_btnbox .pmtrenderer_btngroup .pmtrenderer_btnitem.art{ background:#f1f1f1;}
+
+.pmtitem_renderer—srt{ padding-bottom:25px;}
+.pmtitem_renderer—srt .patitem_name{ color:#999;}
+.pmtitem_landti{ padding:4px 0;;}
+.patitem_panflft{ margin-left:10px;}
+.texturesky_shimg{ margin-bottom:10px; position:relative;}
+.texturesky_shimg_main img{ max-width:100%;}
+.texturesky_backgroundcolor,.texturesky_backgroundcolor input{ width:40px; height:40px; margin-left:10px;}
+
+/*模型属性*/
+.moublecprompt_pmt .ico{ background:url(../images/moublecprompt_pmt.png) left bottom no-repeat;}
+.moreien.atr{ background:#f30000;}
+.modelproperties_sienb{ padding-bottom:6px;}
+.modelproperties_sienb .morlprromp_collomitem{ margin-right:20px; min-width:80px;}
+.modelproperties_sienb .morlprromp_collomitem .choiceclass{ width:auto; height:auto;}
+.modelproperties_sienb .morlprromp_collomitem .irncu{ width:17px; height:17px; position:relative; border-radius:50%; margin-right:10px; background:#fff; border:1px solid #999;}
+.modelproperties_sienb .morlprromp_collomitem .irncu:after{ content:""; position:absolute; top:4px; left:3px; border:5px solid #fff; border-radius:50%;}
+.modelproperties_sienb .morlprromp_collomitem.art .irncu,.modelproperties_sienb .morlprromp_collomitem.art .irncu:after{ border-color:#555;}
+.modelproperties_sienb .morlprromp_collomitem .text{ margin-top:0px; font-size:15px;}
+/* -------------------------- edit --------------------- */
+
+/* ------------------  绘制户型  ------------------- */
+.draw_cont > .distablediv{ height:100%;}
+.draw_unitcontainer{ width:94%; height:94%; border:1px solid #cccccc; padding:10px;}
+.drawunit_hdnav{ height:88px; background:#fff;}
+.drawunit_hdnav .group{ margin:0 35px 0 25px;}
+.drawunit_hdnav .group .item{ width:60px; height:88px; cursor:pointer; background:#aaa;;}
+.drawunit_hdnav .group .brnunit_open{ background: url(../images/OpenHome.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_keep{ background: url(../images/SaveHome.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_import{ background: url(../images/BG.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_ruler{ background: url(../images/Ruler.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_rectanglewall{ background: url(../images/room1.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_onesidewal{ background: url(../images/Wall.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_window{ background: url(../images/Window.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_door{ background: url(../images/Door.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_wallhole{ background: url(../images/Hole.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_pillar{ background: url(../images/Pillar.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_box{ background: url(../images/Box.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_beam{ background: url(../images/Beam.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_backgroundwall{ background: url(../images/TVBG.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_furredceiling{ background: url(../images/SuspendCeiling.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_Floortile{ background: url(../images/Floor1.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_sofa{ background: url(../images/sofa.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_television{ background: url(../images/television.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_table{ background: url(../images/table.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_bed{ background: url(../images/bed.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_desk{ background: url(../images/desk.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_kitchen{ background: url(../images/kitchen.png) center -10px no-repeat;}
+.drawunit_hdnav .group .brnunit_toilet{ background: url(../images/toilet.png) center -10px no-repeat;}
+
+.drawunit_mc{ height:calc(100% - 88px);}
+.drawunit_workspace{ width:calc(100% - 310px); height:100%; background:#f1f1f1;}
+.drawunit_rg{ height:100%; width:298px; background:#fff;}
+.drawunit_sumv{ height:calc(100% - 60px); border:1px solid #ccc;}
+.drawunit_buttin{ text-align: right; margin-top:18px;}
+.drawunit_buttin .btn{ display:inline-block; padding:8px 35px;border:1px solid #ececec; font-size:16px; margin-left:2px; background:#ededed;}
+.drawunit_buttin .btn:hover{ background:#d8d8d8;}
+
+.moubset{ position:fixed; height:100px; right:370px; top:110px;}
+.moubset li{ width:60px; height:60px;margin:4px; cursor:pointer;}
+.moubset li.moubset_a{background:url(../images/PlaneView.png) center no-repeat;}
+.moubset li.moubset_a.art{background:url(../images/PlaneViewDown.png) center no-repeat;}
+.moubset li.moubset_b{background:url(../images/AerialView.png) center no-repeat;}
+.moubset li.moubset_b.art{background:url(../images/AerialViewDown.png) center no-repeat;}
+.moubset li.moubset_c{background:url(../images/InteriorView.png) center no-repeat;}
+.moubset li.moubset_c.art{background:url(../images/InteriorViewDown.png) center no-repeat;}
+/* ------------------  设计清单  ------------------- */
+.inventorybox{ background:#fff; width:75%; margin-top:5%; margin-left:5%; position:relative;}
+.inventorybox .Closebtn{ width:30px; height:30px; cursor:pointer; position:absolute; right:15px; top:10px; background: url(../images/Closebtn_ico.png) center no-repeat;}
+.tinventorybox_hd{ padding:22px; border-bottom:1px solid #333; margin-bottom:10px; font-size:18px; font-weight:bold; text-align:center;}
+.tinventorybox_hd span{ position:absolute; display:inline-block; background:#fff;  padding:7px 10px;}
+
+.tinventorybox_co{ min-height:650px;max-height:650px; padding:20px; }
+.tinventorybox_grow{ margin-top:15px; padding-bottom:15px;}
+.tinventorybox_group{ border-top:1px solid #4a4a4a; font-size:16px; border-left:1px solid #4a4a4a;}
+.tinventorybox_group th,.tinventorybox_group td{ border-bottom:1px solid #4a4a4a; border-right:1px solid #4a4a4a; padding:15px;}
+.tinventorybox_group th{ background:#bcbcbc; color:#000;}
+
+/* ------------------  文件管理器  ------------------- */
+.Filemanager{ background:#f1f1f1;width:71%; margin:auto; border:1px solid #c4c4c4; padding:5px 10px;text-align:left;}
+.Filemanager_hd{ width:100%;}
+.Filemanager_hd .btn{ width:28px; height:28px; padding:0; border:1px solid #ddd; margin-right:8px;}
+.Filemanager_hd .btn.arrow_left{ background:url(../images/arrow_left.png) center no-repeat;}
+.Filemanager_hd .btn.arrow_right{ background:url(../images/arrow_right.png) center no-repeat;}
+.Filemanager_hd .btn.arrow_top{ background:url(../images/arrow_top.png) center no-repeat;}
+.Filemanager_hd .route{width:calc(100% - 120px);line-height:30px; font-size:16px;}
+.Filemanager_hd .route_text{ width:100%; background:none; border:0;}
+
+.Filemanager_co{ height:650px; margin-top:5px; border:1px solid #c4c4c4;}
+.Filemanager_catalog{ width:188px; border:1px solid #c4c4c4; height:100%; text-align:left;}
+.Filemanager_catalog ul{ padding-top:20px;}
+.Filemanager_catalog li { padding:8px 10px 8px 15px; cursor:pointer;}
+.Filemanager_catalog li i{ display:inline-block; width:38px; margin-right:6px; height:34px; vertical-align:middle; }
+.Filemanager_catalog li.disk i{ background: url(../images/diskico.png) center no-repeat}
+.Filemanager_catalog li.library i{ background:url(../images/libraryico.png) center no-repeat}
+.Filemanager_catalog li span{ font-size:16px; display:inline-block; vertical-align:middle;}
+
+.Filemanager_filebox{ width:calc(100% - 200px); height:100%; border:1px solid #c4c4c4;}
+
+.Filemanager_filegroup{ padding:20px 6%; height:calc(100% - 40px);}
+.Filemanager_filegroup .item{ width:110px; height:110px; margin-top:20px; text-align:center; margin-left:32px; margin-right:25px;}
+.Filemanager_filegroup .item .fl{ width:108px; height:83px; background:url(../images/folderico.png) no-repeat;}
+.Filemanager_filegroup .item .tiel{ margin-top:6px; overflow:hidden; height:20px;}
+.Filemanager_ft{ padding:5px 0; width:100%;}
+.Filemanager_ft .filename{ width:75%;}
+.filename_text{ width:100%;padding:6px 0; background:none; border:0; font-size:16px;}
+.Filemanager_ft .gormtype{ height:34px; margin-right:8px;}
+.Filemanager_ft .Filemanager_submit .btn{ padding:6px 30px; background:#f1f1f1; border:1px solid #c4c4c4; margin:0; margin-left:-1px;}
