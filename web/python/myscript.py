@@ -51,7 +51,7 @@ for filename in os.listdir(dir):
 		filetoimport=dir+"/"+filename
 		print("importing..."+filetoimport)	
 		bpy.ops.import_scene.fbx(filepath=filetoimport)
-		#os.remove(filetoimport)
+		os.remove(filetoimport)
 #bpy.ops.import_scene.fbx(filepath=str(sys.argv[4]))#"D:/20161116/bed.FBX")#str(sys.argv[1]))#"D:/2016.10.27/a102.FBX")#2016.10.31/object/FBX 2013/shuimiancang.FBX")
 #, "INVOKE_DEFAULT")
 print("hello world2")
@@ -60,7 +60,7 @@ for obj in bpy.data.objects:
 	obj.b4w_selectable = True
 
 # Export blend file
-#bpy.ops.wm.save_mainfile( filepath="D:/test.html" )
+bpy.ops.wm.save_mainfile( filepath="/var/www/html/web/blend/"+str(sys.argv[7])+".blend" )
 filetoexport = str(sys.argv[7])+".json"
 print(filetoexport)
 bpy.ops.export_scene.b4w_json(filepath=filetoexport)#"D:/20161116/bed2.json")#"D:/20161116/bed.json")#str(sys.argv[2]))#"D:/2016.10.27/a102.json")#2016.10.31/object/FBX 2013/shuimiancang.html")
@@ -68,5 +68,7 @@ shutil.copy(str(sys.argv[7])+".json", "/var/www/html/eihoo/blend_data/"+str(sys.
 shutil.copy(str(sys.argv[7])+".bin", "/var/www/html/eihoo/blend_data/"+str(sys.argv[7])+".bin")
 shutil.copy(str(sys.argv[7])+".json", "/var/www/html/b4w_poc/blend_data/"+str(sys.argv[7])+".json")
 shutil.copy(str(sys.argv[7])+".bin", "/var/www/html/b4w_poc/blend_data/"+str(sys.argv[7])+".bin")
+shutil.copy(str(sys.argv[7])+".json", "/var/www/html/web/blend_data/"+str(sys.argv[7])+".json")
+shutil.copy(str(sys.argv[7])+".bin", "/var/www/html/web/blend_data/"+str(sys.argv[7])+".bin")
 os.remove(str(sys.argv[7])+".json")
 os.remove(str(sys.argv[7])+".bin")

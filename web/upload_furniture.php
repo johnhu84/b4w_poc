@@ -41,10 +41,11 @@ $filename = $_FILES["furniture"]["name"];
 	echo pathinfo($filename, PATHINFO_FILENAME);
 	$output_msg = shell_exec('/usr/bin/blender --background --python python/myscript.py "/var/www/html/web/furniture_zips" "'.pathinfo($filename, PATHINFO_FILENAME).'"');
 	echo $output_msg;
-	$output_msg = shell_exec('python3 /home/huchunlin/blend4web_ce_16_10/blend4web_ce/scripts/converter.py -d "/var/www/html/web/furniture_zips" convert_dds');
-	echo $output_msg;
 	$output_msg = shell_exec('python3 python/resize_to_4.py "/var/www/html/web/furniture_zips"');
 	echo $output_msg;
-	
+	$output_msg = shell_exec('python3 /home/huchunlin/blend4web_ce_16_10/blend4web_ce/scripts/converter.py -d "/var/www/html/web/furniture_zips" convert_dds');
+	echo $output_msg;	
+	$output_msg = shell_exec('python3 python/move_to_blend.py "/var/www/html/web/furniture_zips"');
+	echo $output_msg;
 }
 ?>

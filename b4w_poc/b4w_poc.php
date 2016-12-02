@@ -24,7 +24,7 @@ echo "var objs = ".$js_array.";\n";
 <body>
 
 <div id="main_canvas_container"></div>
-
+<div id="control_container"><form></form></div>
 </body>
 
 </html>

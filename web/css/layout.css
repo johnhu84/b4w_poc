@@ -33,7 +33,8 @@ body{ background:#dde6ef;}
 .hdheigh{ height:85px;}
 .makebox{ height:calc(100% - 100px); margin-right:320px;}
 /* -------------------------- edit ----------------------*/
-.et{ width:320px;height:calc(100% - 85px);background:#fff; position:fixed; right:0; top:84px; }
+.et{ width:320px;height:calc(100% - 85px);background:#fff; position:fixed; right:0; top:84px;overflow-y:scroll; }
+.et2{height:calc(50% - 85px);}
 .et-box,.et-contab,.et-congp{ height:100%;}
 .et .et-hdtab{ height:50px;}
 .et .et-hdtab li{ width:calc(50% - 1px); height:50px; font-size:16px; cursor:pointer; background:#dcdcdc; text-align:center; line-height:50px; border-right:1px solid #c6c6c6;}
@@ -261,3 +262,5 @@ body{ background:#dde6ef;}
 .filename_text{ width:100%;padding:6px 0; background:none; border:0; font-size:16px;}
 .Filemanager_ft .gormtype{ height:34px; margin-right:8px;}
 .Filemanager_ft .Filemanager_submit .btn{ padding:6px 30px; background:#f1f1f1; border:1px solid #c4c4c4; margin:0; margin-left:-1px;}
+
+.b4w{height:100px;} 

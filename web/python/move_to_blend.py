@@ -12,4 +12,7 @@ for filename in os.listdir("."):
 		#catIm = Image.open(filename)
 		#catImCr = catIm.crop((0,0,catIm.width-(catIm.width%4),catIm.height-(catIm.height%4)))
 		#catImCr.save(filename)
-		shutil.move(filename, "../../eihoo/blend_data/furniture_zips/"+filename)
+		shutil.copy(filename, "../../eihoo/blend_data/furniture_zips/"+filename)
+		shutil.copy(filename, "../../b4w_poc/blend_data/furniture_zips/"+filename)
+		shutil.copy(filename, "../blend_data/furniture_zips/"+filename)
+		os.remove(filename)
