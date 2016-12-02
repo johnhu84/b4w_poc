@@ -34,7 +34,7 @@ var m_storage  = require("storage");
 var m_trans    = require("transform");
 var m_util     = require("util");
 var m_version  = require("version");
-var m_tex      = require("texture");	
+var m_tex      = require("textures");	
 
 var m_vec3 = require("vec3");
 
